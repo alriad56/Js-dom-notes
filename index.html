@@ -1,0 +1,58 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <ul >
+    <h1 id="head-title">Hello i am dom</h1>
+    <li>My name is khan</li>
+    <li>My name is Srk</li>
+    <li>My name is king khan</li>
+</ul>
+<!--24-4 Traversing dom - getElementByQuerySelector, querySelectorAll-->
+<section id="developer" class="food">
+    <h1 id="food-title">food item</h1>
+    <button id="food-btn">Order Now</button>
+    <li>fish</li>
+    <li>chicken</li>
+    <li>beef</li>
+    <li class="foreign">burger</li>
+    <li class="foreign">pizza</li>
+    <li class="foreign">chili chicken</li>
+    <p>hey guys what'sup <span>im back your developer boy</span></p>
+</section>
+<script>
+    var foodH1 = document.getElementById("head-title")
+    console.log(foodH1.innerText);
+
+    const liElements = document.querySelectorAll('.food .foreign')
+    for(const li of liElements){
+        console.log(li.innerText)
+    }
+</script>
+<script>
+    const btnMakeBlue = document.getElementById('food-btn')
+        btnMakeBlue.onclick = function makeBlue(){
+            document.body.style.backgroundColor = 'blue';
+        }
+    
+</script>
+<button id="btn-make-green">I'm green</button>
+<script>
+    document.getElementById('btn-make-green').addEventListener("click",function makeGreen(){
+        document.body.style.backgroundColor = 'green';
+    })
+</script>
+
+<button onclick='makeRed()'> Click ME</button>
+<script src="./event.js"></script>
+</body>
+</html>
